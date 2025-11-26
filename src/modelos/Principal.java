@@ -1,9 +1,11 @@
+package modelos;
+
 public class Principal{
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
-        meuFilme.nome = "Moana";
-        meuFilme.anoLancamento = 2016;
-        meuFilme.duracaoEmMinutos = 180;
+        meuFilme.setNome("Moana");
+        meuFilme.setAnoLancamento(2016);
+        meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);

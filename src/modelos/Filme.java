@@ -1,13 +1,33 @@
+package modelos;
+
 public class Filme {
-    String nome;
-    int anoLancamento;
-    boolean incluidoNoPlano;
+    private String nome;
+    private int anoLancamento;
+    private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
-    int duracaoEmMinutos;
+    private int duracaoEmMinutos;
+
+
 
     int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setAnoLancamento(int anoLancamento) {
+        this.anoLancamento = anoLancamento;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
     double getSomaDasAvaliacoes(){
