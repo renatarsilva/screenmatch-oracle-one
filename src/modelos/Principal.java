@@ -14,6 +14,9 @@ public class Principal{
         System.out.println(meuFilme.getSomaDasAvaliacoes());
         System.out.println(meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.mediaDasAvaliacoes());
+        System.out.println(meuFilme);
+
+        Serie serie = new Serie();
 
     }
 }
