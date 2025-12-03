@@ -1,6 +1,7 @@
 package modelos;
 
 import calculos.CalculadoraDeTempo;
+import calculos.FiltroRecomendacao;
 
 public class Principal{
     public static void main(String[] args) {
@@ -31,6 +32,15 @@ public class Principal{
         calculadora.inclui(serie);
 
         System.out.println("Tempo total: " + calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(favorito);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie("LA casa");
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
     }
 
 }
