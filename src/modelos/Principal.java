@@ -1,22 +1,36 @@
 package modelos;
 
+import calculos.CalculadoraDeTempo;
+
 public class Principal{
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Moana");
-        meuFilme.setAnoLancamento(2016);
-        meuFilme.setDuracaoEmMinutos(180);
+        Filme favorito = new Filme();
+        favorito.setNome("The Matrix");
+        favorito.setAnoDeLancamento(1999);
+        favorito.setDuracaoEmMinutos(135);
+        favorito.setIncluidoNoPlano(true);
 
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avalia(8);
-        meuFilme.avalia(5);
-        meuFilme.avalia(10);
-        System.out.println(meuFilme.getSomaDasAvaliacoes());
-        System.out.println(meuFilme.getTotalDeAvaliacoes());
-        System.out.println(meuFilme.mediaDasAvaliacoes());
-        System.out.println(meuFilme);
+        Filme outro = new Filme();
+        outro.setNome("John Wick");
+        outro.setAnoDeLancamento(2014);
+        outro.setDuracaoEmMinutos(101);
+        outro.setIncluidoNoPlano(true);
 
         Serie serie = new Serie();
+        serie.setNome("La casa de papel");
+        serie.setAnoDeLancamento(2017);
+        serie.setIncluidoNoPlano(true);
+        serie.setAtiva(true);
+        serie.setTemporadas(5);
+        serie.setEpisodiosPorTemporada(10);
+        serie.setMinutosPorEpisodio(45);
 
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(favorito);
+        calculadora.inclui(outro);
+        calculadora.inclui(serie);
+
+        System.out.println("Tempo total: " + calculadora.getTempoTotal());
     }
+
 }
