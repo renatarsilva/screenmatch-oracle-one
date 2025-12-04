@@ -4,6 +4,8 @@ public class FiltroRecomendacao {
 
     // quando chamar o filtro recomendacao e ele filtrar o classificavel,
     // olha as estrelas e da a mensagem
+
+
     public  void filtra(Classificavel classificavel){
         if(classificavel.getClassificacao() >= 4){
             System.out.println("está entre os preferidos do momento");

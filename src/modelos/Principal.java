@@ -35,6 +35,7 @@ public class Principal{
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(favorito);
+        filtro.filtra(outro);
 
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
