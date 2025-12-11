@@ -1,6 +1,6 @@
 package modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private int duracaoEmMinutos;
@@ -13,6 +13,11 @@ public class Titulo {
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         System.out.println("Duração em minutos: "+ duracaoEmMinutos);
         System.out.println("Incluído no plano: " + incluidoNoPlano );
+    }
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
     }
 
     public void avalia(double nota){
@@ -58,5 +63,10 @@ public class Titulo {
 
     public int getTotalDeAvaliacoes(){
         return this.totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }

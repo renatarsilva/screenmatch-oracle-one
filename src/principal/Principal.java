@@ -1,29 +1,26 @@
-package modelos;
+package principal;
 
 import calculos.CalculadoraDeTempo;
 import calculos.FiltroRecomendacao;
+import modelos.Episodio;
+import modelos.Filme;
+import modelos.Serie;
 
 import java.util.ArrayList;
 
 public class Principal{
     public static void main(String[] args) {
-        Filme favorito = new Filme();
-        favorito.setNome("The Matrix");
-        favorito.setAnoDeLancamento(1999);
+        Filme favorito = new Filme("The Matrix", 1999);
         favorito.setDuracaoEmMinutos(135);
         favorito.setIncluidoNoPlano(true);
 
 //        favorito.exibirFichaTecnica();
 
-        Filme outro = new Filme();
-        outro.setNome("John Wick");
-        outro.setAnoDeLancamento(2014);
+        Filme outro = new Filme("John Wick", 2014);
         outro.setDuracaoEmMinutos(101);
         outro.setIncluidoNoPlano(true);
 
-        Serie serie = new Serie();
-        serie.setNome("La casa de papel");
-        serie.setAnoDeLancamento(2017);
+        Serie serie = new Serie("La casa de papel", 2017 );
         serie.setIncluidoNoPlano(true);
         serie.setAtiva(true);
         serie.setTemporadas(5);
@@ -48,9 +45,7 @@ public class Principal{
         filtro.filtra(episodio);
 
 
-        var filmeDaMaki = new Filme();
-        filmeDaMaki.setNome("Jujutsu Kaisen");
-        filmeDaMaki.setAnoDeLancamento(2010);
+        var filmeDaMaki = new Filme("Devil wears Prada", 2010);
         filmeDaMaki.setIncluidoNoPlano(true);
         filmeDaMaki.avalia(10);
 
@@ -62,6 +57,11 @@ public class Principal{
         System.out.println("Tamanho da Lista " + listaDeFilmes.size());
         System.out.println("Primeiro filme " + listaDeFilmes.get(0).getNome());
         System.out.println(listaDeFilmes);
+        System.out.println("toString do filme " + listaDeFilmes.get(0).toString());
+
+        filmeDaMaki.toString();
+
+
 
     }
 }
