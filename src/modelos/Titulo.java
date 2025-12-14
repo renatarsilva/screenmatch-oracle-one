@@ -1,7 +1,13 @@
 package modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
+    // anotacao de interface, para que toda vez que o Gson ver Title, ele saber que é nome, transformando estruta em texto (serializado)
+    @SerializedName("Title")
     private String nome;
+
+    @SerializedName("Year")
     private int anoDeLancamento;
     private int duracaoEmMinutos;
     private boolean incluidoNoPlano;
@@ -68,5 +74,11 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return "nome: " + nome + "\n" +
+                "ano de lançamento: " + anoDeLancamento;
     }
 }
